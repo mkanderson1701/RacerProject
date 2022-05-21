@@ -125,7 +125,6 @@ async function runRace (raceID) {
 		try{
 			const raceLoop = setInterval(async function () {
 				raceStatus = await getRace(raceID)
-				debugger
 
 				if (raceStatus.status === 'in-progress') {
 					renderAt('#leaderBoard', raceProgress(raceStatus.positions))
@@ -167,7 +166,7 @@ async function runCountdown() {
 					clearInterval(countInterval)
 					resolve()
 				}
-			}, 250)
+			}, 1000)
 			// setting timer to 1/4 second for testing
 
 			// run this DOM manipulation to decrement the countdown for the user
